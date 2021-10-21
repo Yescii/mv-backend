@@ -71,7 +71,7 @@ app.get("/mountains", async (req, res) => {
 // CREATE ROUTE
 app.post("/mountains", async (req, res) => {
   try {
-    // send all people
+    // create data
     res.json(await Mountains.create(req.body));
   } catch (error) {
     //send error
