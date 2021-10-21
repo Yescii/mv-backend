@@ -79,7 +79,7 @@ app.post("/mountains", async (req, res) => {
   }
 });
 
-// CREATE ROUTE
+// DELETEgit statu ROUTE
 app.delete("/:id", (req, res) => {
   Mountains.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect("/mountains");
