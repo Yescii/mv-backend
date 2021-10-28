@@ -35,7 +35,7 @@ mongoose.connection
 ////////////////////////////////
 const MountainsSchema = new mongoose.Schema({
   name: String,
-  image: String,
+  image_url: String,
   desc: String,
   location: String,
 });
@@ -69,7 +69,7 @@ app.get("/mountains", async (req, res) => {
 });
 
 // CREATE ROUTE
-app.post("/mountains", async (req, res) => {
+app.post("/create", async (req, res) => {
   try {
     // create data
     res.json(await Mountains.create(req.body));
@@ -79,7 +79,7 @@ app.post("/mountains", async (req, res) => {
   }
 });
 
-// DELETEgit statu ROUTE
+// DELETE ROUTE
 app.delete("/:id", (req, res) => {
   Mountains.findByIdAndRemove(req.params.id, (err, data) => {
     res.redirect("/mountains");
